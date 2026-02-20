@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Topics - Admin</title>
+  <style>
+    body{font-family:Arial; margin:20px;}
+    table{border-collapse:collapse;width:100%}
+    td,th{border:1px solid #ccc;padding:8px}
+  </style>
+</head>
+<body>
+  <h2>Topics (DB)</h2>
+  <table>
+    <thead><tr><th>Name</th><th>Description</th><th>Requested By</th><th>Status</th><th>Created</th></tr></thead>
+    <tbody>
+      {% for t in topics %}
+      <tr>
+        <td>{{ t['name'] }}</td>
+        <td>{{ t['description'] or '' }}</td>
+        <td>{{ t['requested_by'] }}</td>
+        <td>{{ t['status'] }}</td>
+        <td>{{ t['created_at'] }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <p><a href="/ui/subscriptions">View subscriptions</a></p>
+</body>
+</html>

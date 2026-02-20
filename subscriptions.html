@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Subscriptions - Admin</title>
+  <style>
+    body{font-family:Arial; margin:20px;}
+    table{border-collapse:collapse;width:100%}
+    td,th{border:1px solid #ccc;padding:8px}
+  </style>
+</head>
+<body>
+  <h2>Subscriptions (DB)</h2>
+  <table>
+    <thead><tr><th>User</th><th>Topic</th><th>Subscribed At</th></tr></thead>
+    <tbody>
+      {% for s in subs %}
+      <tr>
+        <td>{{ s['user_id'] }}</td>
+        <td>{{ s['topic_name'] }}</td>
+        <td>{{ s['subscribed_at'] }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <p><a href="/ui/topics">Back to topics</a></p>
+</body>
+</html>
